@@ -55,10 +55,11 @@ class AuthController extends Controller
                     return new UserApiResource($user);
 
              }
-             return [
+           $message = [
                  'error'=>true,
                'message'=>'user not exsit'
              ];
+        return response($message,404);
 
     }
 }
