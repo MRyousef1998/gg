@@ -17,6 +17,8 @@ use App\User;
 
 Route::get('categories','Api\CategoryController@index');
 Route::get('categories/{id}','Api\CategoryController@show');
+Route::get('categories/{id}/products','Api\CategoryController@product');
+
 // tag
 Route::get('tags/{id}','Api\TagController@show');
 Route::get('tags','Api\TagController@index');
