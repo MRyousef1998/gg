@@ -3,13 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Product;
 
 class Category extends Model
 {
+    protected $table='categories';
+    protected $primaryKey='id';
     //
     protected $fillable=['name'];
     public function products()
     {
-        return hasMany(Product::class);
+        return $this->hasMany(Product::class);
     }
 }
