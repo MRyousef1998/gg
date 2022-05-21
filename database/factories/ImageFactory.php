@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Image::class, function (Faker $faker) {
     return [
-        'url'=>$this->faker->"https://picsum.photos/1200/350?random=".mt_rand(1, 55000),
+        'url'=>"https://picsum.photos/1200/350?random=".mt_rand(1, 55000),
             'product_id'=>$this->faker->numberBetween(1,1500),
            
     ];
