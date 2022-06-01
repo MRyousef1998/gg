@@ -75,6 +75,9 @@ class User extends Authenticatable
     public function formattedName(){
         return $this->first_name .''. $this->last_name;
     }
+      public function (){
+        return $this->hasone(Cart::class,'id','cart_id');
+    }
 
 
 }
