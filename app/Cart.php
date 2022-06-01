@@ -12,5 +12,9 @@ class Cart extends Model
         'total',
 
     ];
+    
+      public function user(){
+        return $this->belongsToMany(User::class);
+    }
    
 }
