@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\CartController;
 use App\Http\Controllers\Api\TagController;
 use App\Http\Controllers\Api\AuthController;
 
@@ -38,7 +39,7 @@ Route::get('countries','Api\CountryController@index');
 //rigster
 Route::post('auth/register','Api\AuthController@register');
 Route::post('auth/login','Api\AuthController@login');
-
+Route::post('cart','Api\CartController@AddProductToCart');
 
 
 Route::get('users', function (Request $request) {
