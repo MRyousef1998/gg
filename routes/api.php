@@ -5,7 +5,7 @@ use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CartController;
 use App\Http\Controllers\Api\TagController;
 use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\Api\CartController;
+
 
 use  App\Http\Resources\CategoryResource;
 use  App\Http\Resources\CountryResource;
