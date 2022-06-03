@@ -24,7 +24,7 @@ class Cart extends Model
            $this->cartItems=[];
               return $this->cartItems; 
         }
-        return json_decode($this->cartItems);
+        return $this->cartItems;
     }
      public function addProductToCart(Product $product,$qty=1){
          $cartItems=$this->cartItems();
