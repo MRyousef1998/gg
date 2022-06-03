@@ -16,6 +16,13 @@ class CartController extends Controller
 
         }
     private function conectionState(Cart $cart){
+        if(is_null($cart)){
+            $cart=new Cart();
+            $cart->cart_item=[];
+            $cart->total=0;
+            return $cart;
+        }
+        return $cart;
     
     
     }
