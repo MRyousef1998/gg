@@ -5,7 +5,7 @@ use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\CartController;
 use App\Http\Controllers\Api\TagController;
 use App\Http\Controllers\Api\AuthController;
-
+use App\Http\Controllers\Api\CartController;
 
 use  App\Http\Resources\CategoryResource;
 use  App\Http\Resources\CountryResource;
@@ -54,7 +54,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //});
 
 Route::middleware('auth:api')->group( function () {
-  Route::post('cart','Api\CartController@AddProductToCart');
+  Route::post('carts','Api\CartController@AddProductToCart');
 });
 
  
