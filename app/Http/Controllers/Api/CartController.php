@@ -31,7 +31,7 @@ class CartController extends Controller
             return new CartResource($cart);
 
         }
-    private function cartState(Cart $cart){
+    private function cartState(Cart $cart=null){
         if(is_null($cart)){
             $cart=new Cart();
             $cart->cart_item=[];
