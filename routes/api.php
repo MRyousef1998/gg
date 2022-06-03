@@ -53,4 +53,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return App\Product::all();
 //});
 
+Route::middleware('auth:api')->group( function () {
+  Route::post('cart','Api\CartController@AddProductToCart');
+});
+
  
