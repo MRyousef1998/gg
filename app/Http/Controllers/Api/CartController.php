@@ -19,15 +19,29 @@ class CartController extends Controller
             
             $product_id=$request.input('product_id');
             $product=Product::findOrFall($product_id);
-            $cart=$this->cartState($user->cart);
+            $cart=$user->cart;
             $qty=$request->input('qty');
+            
+            if(is_null($cart)){
+            $cart=new Cart();
+            $cart->cart_item=[];
+            $cart->total=0;
+            $cart->user_id=$user->id;
+            $user->cart_id=$cart_id;
+            
+            
+            }
             if($cart->inItem($product_id)){
              $cart->incrmentProductinCart($product);
-            }
+            } 
             else{
+            
                $cart->addProductToCart($product,$qty);
             }
-             $cart->save();
+             $user->cart_id=$cart_id;
+              $cart= $cart->save();
+             $user->save();
+             return   $cart;
             return new CartResource($cart);
 
         }
