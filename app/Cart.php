@@ -25,7 +25,7 @@ class Cart extends Model
 //            $this->cart_items=[];
 //               return $this->cart_items; 
 //         } 
-//         return json_decode($this->cart_items);
+//         return json_decode($this->cart_items,true);
 //     }
      public function addProductToCart(Product $product,$qty=1){
          $cartItems=$this->cart_items;
@@ -36,7 +36,7 @@ class Cart extends Model
         } 
          else{
                if(! is_array($cartItems)
-           $cartItems=json_decode($this->cart_items);
+           $cartItems=json_decode($this->cart_items,true);
            }
          $cartItem=new CartItem($product,$qty); 
          array_push($cartItems,$cartItem);
@@ -52,7 +52,7 @@ class Cart extends Model
               
         } else{
                if(! is_array($cartItems)
-           $cartItems=json_decode($this->cart_items);
+           $cartItems=json_decode($this->cart_items,true);
            }
         
           foreach($cartItems as $cartItem){
@@ -69,7 +69,7 @@ class Cart extends Model
               
         } else{
                if(! is_array($cartItems)
-           $cartItems=json_decode($this->cart_items);
+           $cartItems=json_decode($this->cart_items,true);
            }
         
           foreach($cartItems as $cartItem){
