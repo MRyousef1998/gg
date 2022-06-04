@@ -61,7 +61,7 @@ class Cart extends Model
            }
         
           foreach($cartItems as $cartItem){
-          if($productId==$cartItem->product->id){
+          if($product->id==$cartItem->product->id){
               $cartItem->qty+=$qty;
           
           }
