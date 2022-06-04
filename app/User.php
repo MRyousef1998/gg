@@ -26,7 +26,7 @@ class User extends Authenticatable
         'shipping_address',
         'billing_address',
         'api_token',
-
+        'cart_id',
     ];
 
     /**
