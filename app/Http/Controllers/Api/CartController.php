@@ -23,7 +23,7 @@ class CartController extends Controller
             $user=Auth::user();
             
             $product_id=$request->input('product_id');
-            return $product_id;
+            
             $product=Product::findOrFail($product_id);
             $cart=$user->cart;
             $qty=$request->input('qty');
@@ -43,8 +43,10 @@ class CartController extends Controller
             else{
             
                $cart->addProductToCart($product,$qty);
+                return $cart;
             }
              $user->cart_id=$cart->id;
+            return $user->cart_id;
                $cart->save();
              $user->save();
              return   $cart;
