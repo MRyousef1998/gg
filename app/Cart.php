@@ -28,16 +28,16 @@ class Cart extends Model
 //         return json_decode($this->cart_items);
 //     }
      public function addProductToCart(Product $product,$qty=1){
-         $cartItems=$this->cart_items();
+         $cartItems=$this->cart_items;
          
            if(is_null($cartItems)){
            $cartItems=[];
               
         } 
-//          else{
-//                if(! is_array($cartItems)
-//            $cartItems=json_decode($this->cart_items);
-//            }
+         else{
+               if(! is_array($cartItems)
+           $cartItems=json_decode($this->cart_items);
+           }
          $cartItem=new CartItem($product,$qty); 
          array_push($cartItems,$cartItem);
          $this->cart_items=json_encode($cartItems);
@@ -46,13 +46,13 @@ class Cart extends Model
     }
     
     public function incrmentProductinCart(Product $product,$qty=1){
-          $cartItems=$this->cart_items();
+          $cartItems=$this->cart_items;
            if(is_null($cartItems)){
            $cartItems=[];
               
         } else{
                if(! is_array($cartItems)
-           $cartItems=json_decode($cartItems);
+           $cartItems=json_decode($this->cart_items);
            }
         
           foreach($cartItems as $cartItem){
@@ -63,7 +63,7 @@ class Cart extends Model
     }
    
       public function inItem($productId){
-           $cartItems=$this->cart_items();
+           $cartItems=$this->cart_items;
            if(is_null($cartItems)){
            $cartItems=[];
               
