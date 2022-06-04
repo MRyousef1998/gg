@@ -35,7 +35,7 @@ class Cart extends Model
               
         } 
          else{
-               if(! is_array($cartItems)
+               if(! is_array($cartItems))
            $cartItems=json_decode($this->cart_items,true);
            }
          $cartItem=new CartItem($product,$qty); 
@@ -51,7 +51,7 @@ class Cart extends Model
            $cartItems=[];
               
         } else{
-               if(! is_array($cartItems)
+               if(! is_array($cartItems))
            $cartItems=json_decode($this->cart_items,true);
            }
         
@@ -68,7 +68,7 @@ class Cart extends Model
            $cartItems=[];
               
         } else{
-               if(! is_array($cartItems)
+               if(! is_array($cartItems))
            $cartItems=json_decode($this->cart_items,true);
            }
         
