@@ -29,7 +29,7 @@ class Cart extends Model
 //     }
      public function addProductToCart(Product $product,$qty=1){
          $cartItems=$this->cart_items();
-          $cartItems=$this->cart_items();
+         
            if(is_null($cartItems)){
            $cartItems=[];
               
