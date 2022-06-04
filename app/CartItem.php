@@ -9,7 +9,7 @@ class CartItem extends Model
 {
    public $product;
    public $qtr;  
-    public function _construct(Product $product,$qtr){
+    public function _construct($product,$qtr){
     $this->product=$product;
         $this->qty=$qtr;
     
