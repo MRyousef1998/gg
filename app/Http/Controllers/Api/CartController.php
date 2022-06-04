@@ -12,9 +12,9 @@ class CartController extends Controller
     
         public function AddProductToCart(Request $request){
             
-            $request->validate([
-               ' product_id' => 'required',
-                'qty'=>'required]);
+//             $request->validate([
+//                ' product_id' => 'required',
+//                 'qty'=>'required]);
             $user=Auth::user();
             
             $product_id=$request.input('product_id');
