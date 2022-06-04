@@ -43,7 +43,7 @@ class CartController extends Controller
             
                $cart->addProductToCart($product,$qty);
             }
-             $user->cart_id=$cart_id;
+             $user->cart_id=$cart->id;
               $cart= $cart->save();
              $user->save();
              return   $cart;
