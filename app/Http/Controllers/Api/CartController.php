@@ -42,7 +42,7 @@ class CartController extends Controller
              $cart->incrmentProductinCart($product);
             } 
             else{
-                return $cart;
+               
             
                $cart->addProductToCart($product,$qty);
            
