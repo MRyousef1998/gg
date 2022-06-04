@@ -40,8 +40,9 @@ class Cart extends Model
            $cartItems=json_decode($this->cart_items,true);
            }
          $cartItem=new CartItem($product,$qty); 
+         return $product;
          array_push($cartItems,$cartItem);
-         return $cartItems;
+        
          $this->cart_items=json_encode($cartItems);
          return $cartItems;
         
