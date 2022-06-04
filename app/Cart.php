@@ -70,6 +70,7 @@ class Cart extends Model
    
       public function inItem($productId){
            $cartItems=$this->cart_items;
+           return $cartItems;
            if(is_null($cartItems)){
            $cartItems=[];
               
@@ -77,7 +78,7 @@ class Cart extends Model
                if(! is_array($cartItems))
            $cartItems=json_decode($this->cart_items);
            }
-          return $cartItems;
+         
         
           foreach($cartItems as $cartItem){
           if($productId==$cartItem->product->id){
