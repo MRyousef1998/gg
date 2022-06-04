@@ -23,6 +23,7 @@ class CartController extends Controller
             $user=Auth::user();
             
             $product_id=$request->input('product_id');
+            return $product_id;
             $product=Product::findOrFail($product_id);
             $cart=$user->cart;
             $qty=$request->input('qty');
