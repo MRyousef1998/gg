@@ -32,7 +32,7 @@ class CartController extends Controller
             $cart->cart_item=[];
             $cart->total=0;
             $cart->user_id=$user->id;
-            $user->cart_id=$cart_id;
+            $user->cart_id=$cart->id;
             
             
             }
