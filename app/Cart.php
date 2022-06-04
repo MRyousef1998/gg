@@ -60,7 +60,8 @@ class Cart extends Model
               $cartItem->qty+=$qty;
           
           }
-    }
+              
+    }}
    
       public function inItem($productId){
            $cartItems=$this->cart_items;
