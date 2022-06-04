@@ -29,9 +29,9 @@ class Cart extends Model
 //         return json_decode($this->cart_items,true);
 //     }
      public function addProductToCart(Product $product,$qty=1){
-          return response()->json([
+          return [
         'posts' => $product
-    ]);
+    ];
          $cartItems=$this->cart_items;
          
            if(is_null($cartItems)){
