@@ -29,7 +29,7 @@ class CartController extends Controller
             
             if(is_null($cart)){
             $cart=new Cart();
-            $cart->cart_item=[];
+            $cart->cart_items=[];
             $cart->total=0;
             $cart->user_id=$user->id;
             $user->cart_id=$cart->id;
