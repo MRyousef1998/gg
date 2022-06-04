@@ -36,7 +36,7 @@ class CartController extends Controller
             $cart->total=0;
             $cart->user_id=$user->id;
             //$user->cart_id=$cart->id;
-            return $cart;
+            
             
             }
            //return ['l'=> $cart->inItem($product_id)];
@@ -51,10 +51,11 @@ class CartController extends Controller
            
             }
              $user->cart_id=$cart->id;
-            return $cart;
-            $user->save();
+          
+         
                $cart->save();
-             
+               $user->save();
+                $user->save();
              return   $cart;
             return new CartResource($cart);
 
