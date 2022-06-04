@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Api;
 use  App\Http\Resources\CategoryResource;
 use App\Http\Resources\ProductResource;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 use  App\Cart;
 
