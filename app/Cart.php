@@ -29,9 +29,7 @@ class Cart extends Model
 //         return json_decode($this->cart_items,true);
 //     }
      public function addProductToCart(Product $product,$qty=1){
-          return [
-        'posts' => $product,'g'=>"ddd"
-    ];
+      
          $cartItems=$this->cart_items;
          
            if(is_null($cartItems)){
@@ -46,7 +44,7 @@ class Cart extends Model
         // dd( $product);
          array_push($cartItems,$cartItem);
         
-         $this->cart_items=json_encode($cartItems);
+         $this->cart_items=$cartItems;
          return $cartItems;
         
     }
