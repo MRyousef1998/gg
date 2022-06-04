@@ -44,7 +44,7 @@ class CartController extends Controller
             else{
             
                $cart->addProductToCart($product,$qty);
-             
+             return $cart;
             }
              $user->cart_id=$cart->id;
             
