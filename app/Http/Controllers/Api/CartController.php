@@ -26,7 +26,8 @@ class CartController extends Controller
             
             $product=Product::findOrFail($product_id);
             
-            $cart=$user->cart_id;
+            $cart=$user->cart;
+            return $cart;
             $qty=$request->input('qty');
             
             if(is_null($cart)){
