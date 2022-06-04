@@ -30,7 +30,7 @@ class Cart extends Model
 //     }
      public function addProductToCart(Product $product,$qty=1){
           return [
-        'posts' => $product
+        'posts' => $product,'g'=>"ddd"
     ];
          $cartItems=$this->cart_items;
          
