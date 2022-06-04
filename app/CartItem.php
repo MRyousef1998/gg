@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Product;
 
-class CartItem extends Model
+class CartItem 
 {
    public $product;
    public $qtr;  
