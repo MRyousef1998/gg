@@ -31,7 +31,7 @@ class Cart extends Model
      public function addProductToCart(Product $product,$qty=1){
           return response()->json([
         'posts' => $product
-    ])
+    ]);
          $cartItems=$this->cart_items;
          
            if(is_null($cartItems)){
