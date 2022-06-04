@@ -51,6 +51,7 @@ class CartController extends Controller
            
             }
              $user->cart_id=$cart->id;
+            return $user;
             $user->save();
                $cart->save();
              
