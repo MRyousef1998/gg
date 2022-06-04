@@ -70,7 +70,7 @@ class Cart extends Model
    
       public function inItem($productId){
            $cartItems=$this->cart_items;
-           return $cartItems;
+         //  return $cartItems;
            if(is_null($cartItems)){
            $cartItems=[];
               
