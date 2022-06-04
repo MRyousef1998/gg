@@ -38,7 +38,9 @@ class CartController extends Controller
             
             
             }
+           return ['l'=> $cart->inItem($product_id)];
             if($cart->inItem($product_id)){
+                
              $cart->incrmentProductinCart($product);
             } 
             else{
