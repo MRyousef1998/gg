@@ -33,10 +33,11 @@ class Cart extends Model
            if(is_null($cartItems)){
            $cartItems=[];
               
-        } else{
-               if(! is_array($cartItems)
-           $cartItems=json_decode($this->cart_items);
-           }
+        } 
+//          else{
+//                if(! is_array($cartItems)
+//            $cartItems=json_decode($this->cart_items);
+//            }
          $cartItem=new CartItem($product,$qty); 
          array_push($cartItems,$cartItem);
          $this->cart_items=json_encode($cartItems);
