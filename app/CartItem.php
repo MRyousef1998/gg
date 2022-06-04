@@ -7,8 +7,8 @@ use App\Product;
 
 class CartItem 
 {
-   public $product;
-   public $qtr;  
+   public Product $product;
+   public int $qtr;  
     public function __construct(Product $product,$qtr){
         return  $product;
     $this->product=$product;
