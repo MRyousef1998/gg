@@ -21,7 +21,7 @@ class CartController extends Controller
 //                 'qty'=>'required]);
             $user=Auth::user();
             
-            $product_id=$request.input('product_id');
+            $product_id=$request->input('product_id');
             $product=Product::findOrFall($product_id);
             $cart=$user->cart;
             $qty=$request->input('qty');
