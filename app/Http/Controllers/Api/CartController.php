@@ -34,11 +34,11 @@ class CartController extends Controller
             $cart->cart_items=[];
             $cart->total=0;
             $cart->user_id=$user->id;
-            $user->cart_id=$cart->id;
+            //$user->cart_id=$cart->id;
             
             
             }
-           return ['l'=> $cart->inItem($product_id)];
+           //return ['l'=> $cart->inItem($product_id)];
             if($cart->inItem($product_id)){
                 
              $cart->incrmentProductinCart($product);
@@ -50,9 +50,9 @@ class CartController extends Controller
            
             }
              $user->cart_id=$cart->id;
-            
+            $user->save();
                $cart->save();
-             $user->save();
+             
              return   $cart;
             return new CartResource($cart);
 
