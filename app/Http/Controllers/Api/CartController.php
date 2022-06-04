@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Auth;
-
+use App\Product;
 use Illuminate\Http\Request;
 use  App\Cart;
 
@@ -16,9 +16,9 @@ class CartController extends Controller
     
         public function AddProductToCart(Request $request){
             
-//             $request->validate([
-//                ' product_id' => 'required',
-//                 'qty'=>'required]);
+            $request->validate([
+               ' product_id' => 'required',
+                'qty'=>'required']);
             $user=Auth::user();
             
             $product_id=$request->input('product_id');
