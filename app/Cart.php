@@ -38,7 +38,7 @@ class Cart extends Model
         } 
          else{
                if(! is_array($cartItems))
-           $cartItems=json_decode($this->cart_items,true);
+           $cartItems=json_decode($cartItems);
            }
          $cartItem=new CartItem($product,$qty); 
         // dd( $product);
