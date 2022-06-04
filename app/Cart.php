@@ -77,6 +77,7 @@ class Cart extends Model
                if(! is_array($cartItems))
            $cartItems=json_decode($this->cart_items);
            }
+          return $cartItems;
         
           foreach($cartItems as $cartItem){
           if($productId==$cartItem->product->id){
