@@ -68,7 +68,7 @@ class Cart extends Model
               
     }
     
-    $this->cartItems=json_encode($cartItems );
+    $this->cart_items=json_encode($cartItems );
     }
    
       public function inItem($productId){
