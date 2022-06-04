@@ -21,13 +21,12 @@ class CartController extends Controller
                 'qty'=>'required'
             ]);
             $user=Auth::user();
-            
-            return $user;
+         
             $product_id=$request->input('product_id');
             
             $product=Product::findOrFail($product_id);
             
-            $cart=$user->cart;
+            $cart=$user->cart_id;
             $qty=$request->input('qty');
             
             if(is_null($cart)){
