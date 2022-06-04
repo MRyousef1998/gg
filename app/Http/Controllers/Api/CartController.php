@@ -44,7 +44,7 @@ class CartController extends Controller
                $cart->addProductToCart($product,$qty);
             }
              $user->cart_id=$cart->id;
-              $cart= $cart->save();
+               $cart->save();
              $user->save();
              return   $cart;
             return new CartResource($cart);
