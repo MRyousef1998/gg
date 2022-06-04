@@ -44,7 +44,7 @@ class Cart extends Model
         // dd( $product);
          array_push($cartItems,$cartItem);
         
-         $this->cart_items=$cartItems;
+         $this->cart_items=json_encode($cartItems);
          return $cartItems;
         
     }
