@@ -9,7 +9,7 @@ class CartItem
 {
    public $product;
    public $qtr;  
-    public function _construct(Product $product,$qtr){
+    public function __construct(Product $product,$qtr){
         return  $product;
     $this->product=$product;
         $this->qty=$qtr;
