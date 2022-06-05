@@ -46,6 +46,10 @@ class Cart extends Model
          array_push($cartItems,$cartItem);
         
          $this->cart_items=json_encode($cartItems);
+          $tempTotal=0;
+        foreach($cartItems as $cartItem){
+         $tempTotal+=($cartItem->qty * $cartItem->product->price); }
+        $this->total=$tempTotal;
          return $cartItems;
         
     }
@@ -65,10 +69,14 @@ class Cart extends Model
               $cartItem->qty=$cartItem->qty+$qty;
           
           }
-              
-    }
+           } 
+        $this->cart_items=json_encode($cartItems );
+        $tempTotal=0;
+        foreach($cartItems as $cartItem){
+         $tempTotal+=($cartItem->qty * $cartItem->product->price); }
+        $this->total=$tempTotal;
     
-    $this->cart_items=json_encode($cartItems );
+   
     }
    
       public function inItem($productId){
