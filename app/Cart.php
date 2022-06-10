@@ -29,6 +29,32 @@ class Cart extends Model
 //         } 
 //         return json_decode($this->cart_items,true);
 //     }
+    
+    
+       public function index(){
+        $user=Auth::user();
+        $cart=$user->cart;
+        $cartItems=json_decode($cart->cart_items);
+        $finalCartItems=[];
+        foreach($cartItems as $cartItem)
+        {
+         $product=Product::find(intval ($cartItem->product->id));
+         
+        $finalCartItem=new \stdClass();
+        $finalCartItem->product=new ProductResource($product);
+        $finalCartItem->qty=$cartItem->qty;
+       
+        array_push($finalCartItems,$finalCartItem);
+        
+        }
+           return [
+           'cart_items'=>$finalCartItems ,   
+            'id'=> $cart->id,
+              'total'=> $cart-> total,
+           ];
+            
+    }
+    
      public function addProductToCart(Product $product,$qty=1){
       
          $cartItems=$this->cart_items;
