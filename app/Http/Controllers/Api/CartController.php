@@ -41,8 +41,8 @@ class CartController extends Controller
         }
            return [
            'cart_items'=>$finalCartItems ,   
-            'id'=> $cart->id,
-              'total'=> $cart-> total,
+            'id'=>number_format(doubleval( $cart->id),2),
+              'total'=>number_format(doubleval($cart-> total),2) ,
            ];
             
     }
