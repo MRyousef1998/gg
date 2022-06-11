@@ -18,7 +18,16 @@ class CartController extends Controller
        public function index(){
         $user=Auth::user();
         $cart=$user->cart;
-           return $cart;
+            
+            if(is_null($cart)){
+            $cart=new Cart();
+            $cart->cart_items=[];
+            $cart->total=0;
+            $cart->user_id=$user->id;
+            //$user->cart_id=$cart->id;
+            
+            
+            }
         $cartItems=json_decode($cart->cart_items);
         $finalCartItems=[];
         foreach($cartItems as $cartItem)
