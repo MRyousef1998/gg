@@ -20,12 +20,10 @@ class CartController extends Controller
         $cart=$user->cart;
             
             if(is_null($cart)){
-            $cart=new Cart();
-            $cart->cart_items=[];
-            $cart->total=0;
-            $cart->user_id=$user->id;
-            //$user->cart_id=$cart->id;
-            
+           
+            return [
+           'cart_items'=>[],   
+           ];
             
             }
         $cartItems=json_decode($cart->cart_items);
